@@ -394,6 +394,31 @@ section { padding: 80px 0; }
   color: var(--text-muted);
 }
 
+.ref-category {
+  margin-bottom: 28px;
+}
+
+.ref-category-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ref-category-label::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.ref-category-label.cat-corp::before { background: var(--teal); }
+.ref-category-label.cat-public::before { background: var(--amber); }
+.ref-category-label.cat-univ::before { background: var(--blue); }
+
 /* ── Profile ── */
 .profile-layout {
   display: grid;
@@ -698,7 +723,7 @@ footer {
       <div class="diff-card">
         <div class="diff-icon blue">✅</div>
         <h3>18년 현업 + 강의 경력</h3>
-        <p>CJ·SK·현대 등에서 마케팅·전략 실무를 경험한 뒤, 2008년부터 삼성전자·KT·롯데 등 30개 이상 기업에서 사내 교육을 진행했습니다.</p>
+        <p>CJ·SK·현대 등에서 마케팅·전략 실무를 경험한 뒤, 2008년부터 삼성전자·KT·롯데 등 40개 이상 기업에서 사내 교육을 진행했습니다.</p>
       </div>
     </div>
   </div>
@@ -836,32 +861,90 @@ footer {
 <section id="references">
   <div class="container">
     <div class="section-label">References</div>
-    <h2 class="section-title">교육 진행 기업</h2>
-    <p class="section-desc">2008년부터 누적 30개 이상 기업에서 사내 교육을 진행했습니다.</p>
+    <h2 class="section-title">교육 진행 레퍼런스</h2>
+    <p class="section-desc">2008년부터 기업·공공기관·대학에서 사내 교육 및 강의를 진행하고 있습니다.</p>
 
-    <div class="ref-logos">
-      <span>삼성전자</span>
-      <span>삼성SDS</span>
-      <span>SK</span>
-      <span>KT</span>
-      <span>CJ대한통운</span>
-      <span>이마트</span>
-      <span>신세계</span>
-      <span>롯데마트</span>
-      <span>롯데정보통신</span>
-      <span>KIA</span>
-      <span>현대증권</span>
-      <span>우리은행</span>
-      <span>NH</span>
-      <span>산업은행</span>
-      <span>유한양행</span>
-      <span>골프존</span>
-      <span>동원</span>
-      <span>MG새마을금고</span>
-      <span>서브원</span>
-      <span>일진전기</span>
+    <div class="ref-category">
+      <div class="ref-category-label cat-corp">기업</div>
+      <div class="ref-logos">
+        <span>삼성전자</span>
+        <span>삼성SDS</span>
+        <span>삼성전자로지텍</span>
+        <span>SK네트웍스</span>
+        <span>SK브로드밴드</span>
+        <span>KT</span>
+        <span>CJ대한통운</span>
+        <span>포스코</span>
+        <span>한국전력</span>
+        <span>이마트</span>
+        <span>신세계</span>
+        <span>롯데그룹</span>
+        <span>롯데마트</span>
+        <span>롯데제과</span>
+        <span>롯데정보통신</span>
+        <span>롯데삼강</span>
+        <span>KIA</span>
+        <span>HL만도</span>
+        <span>현대증권</span>
+        <span>KB국민카드</span>
+        <span>NH농협</span>
+        <span>우리은행</span>
+        <span>산업은행</span>
+        <span>DB손해보험</span>
+        <span>MG새마을금고</span>
+        <span>매일유업</span>
+        <span>삼양식품</span>
+        <span>동원</span>
+        <span>유한양행</span>
+        <span>청호나이스</span>
+        <span>골프존</span>
+        <span>LS산전</span>
+        <span>일진전기</span>
+        <span>서브원</span>
+        <span>애경유화</span>
+        <span>후성그룹</span>
+        <span>수산그룹</span>
+        <span>엔투비</span>
+        <span>인테그리스</span>
+        <span>싸이버로지텍</span>
+        <span>신공항하이웨이</span>
+        <span>제주JDC</span>
+      </div>
     </div>
-    <p class="ref-note">이 외 한국표준협회(KSA), 생산성본부(KPC), aT 등 공개 과정 다수 진행</p>
+
+    <div class="ref-category">
+      <div class="ref-category-label cat-public">공공기관</div>
+      <div class="ref-logos">
+        <span>한국표준협회(KSA)</span>
+        <span>한국생산성본부(KPC)</span>
+        <span>한국환경공단</span>
+        <span>한국관광공사</span>
+        <span>KISA</span>
+        <span>aT농수산식품유통교육원</span>
+        <span>능력개발교육원</span>
+        <span>DGIST</span>
+        <span>충남 테크노파크</span>
+        <span>대전 테크노파크</span>
+        <span>제주 테크노파크</span>
+        <span>대구 상공회의소</span>
+        <span>제주개발공사</span>
+      </div>
+    </div>
+
+    <div class="ref-category">
+      <div class="ref-category-label cat-univ">대학</div>
+      <div class="ref-logos">
+        <span>연세대</span>
+        <span>고려대</span>
+        <span>한양대</span>
+        <span>경희대</span>
+        <span>동국대</span>
+        <span>부산대</span>
+        <span>경북대</span>
+        <span>경상대</span>
+        <span>추계예대</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -883,7 +966,7 @@ footer {
             <div class="stat-label">강의 경력(년)</div>
           </div>
           <div class="stat">
-            <div class="stat-num">30+</div>
+            <div class="stat-num">40+</div>
             <div class="stat-label">기업 레퍼런스</div>
           </div>
         </div>
