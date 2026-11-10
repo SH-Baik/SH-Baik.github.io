@@ -290,6 +290,48 @@ section[id],[id="contact"]{scroll-margin-top:76px}
 @media(max-width:768px){section[id],[id="contact"]{scroll-margin-top:112px}.nav-cta{display:none}}
 
 @media(max-width:380px){.nav-mobile a{font-size:12px;padding:6px 8px}}
+
+/* === v4 · 2026-11-10: 동적 요소 3종 (히어로 점→선 · 숫자 카운트업 · 2σ 판단 체험) === */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero-grid .hero-content{max-width:none}
+.dot-field{position:relative;height:380px;border-left:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dot-field svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:0;transition:opacity 1s ease 1.1s}
+.dot-field.aligned svg{opacity:1}
+.dot-field .band{fill:var(--teal);animation:breathe 4.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.10}50%{opacity:.26}}
+.dot-field .dot{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--text);transition:top 1.6s cubic-bezier(.2,.7,.2,1),left 1.6s cubic-bezier(.2,.7,.2,1)}
+.dot-field-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}
+.dot-caption{font-size:12.5px;color:var(--text-muted);letter-spacing:.2px}
+.dot-btn{background:var(--bg-card);color:var(--teal-dark);border:1px solid var(--teal);padding:8px 18px;border-radius:8px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px;transition:all .2s}
+.dot-btn:hover{background:var(--teal);color:#fff}
+.diff-num{font-family:'Noto Serif KR',serif;font-size:40px;font-weight:700;line-height:1.1;color:var(--teal-dark);margin-bottom:12px;letter-spacing:-1px}
+.diff-num small{font-size:18px;font-weight:600;margin-left:2px}
+.try-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px}
+.try-q{font-size:15px;color:var(--text-sec);line-height:1.75;margin-bottom:20px}
+.try-choices{display:flex;flex-direction:column;gap:8px}
+.try-choice{text-align:left;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:13px 18px;font:inherit;font-size:14.5px;color:var(--text);cursor:pointer;min-height:48px;transition:all .2s}
+.try-choice:hover{border-color:var(--teal)}
+.try-choice[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.try-chart{position:relative;height:220px;display:flex;align-items:flex-end;gap:6px;border-bottom:1px solid var(--text);padding:0 4px}
+.try-band{position:absolute;left:0;right:0;z-index:1;pointer-events:none;background:rgba(58,170,158,.18);border-top:1px dashed var(--teal-dark);border-bottom:1px dashed var(--teal-dark);opacity:0;transition:opacity .5s}
+.try-chart.answered .try-band{opacity:1}
+.try-bar{position:relative;flex:1 1 0;background:var(--text-muted);border-radius:2px 2px 0 0;transition:background .4s}
+.try-bar.odd{background:var(--text)}
+.try-chart.answered .try-bar.odd{background:var(--amber)}
+.try-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-top:8px}
+.try-result{display:none;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.try-result.show{display:block}
+.try-verdict{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.try-explain{font-size:14.5px;color:var(--text);line-height:1.75;margin-bottom:8px}
+.try-note{font-size:13px;color:var(--text-sec);line-height:1.7;margin-bottom:12px}
+.try-link{font-size:14.5px;font-weight:600;color:var(--teal-dark);text-decoration:none}
+.try-link:hover{color:var(--teal)}
+.try-sample{font-size:12px;color:var(--text-muted);margin-top:12px}
+@media(max-width:768px){
+  .hero-grid,.try-wrap{grid-template-columns:1fr;gap:32px}
+  .dot-field{height:240px}
+}
+@media(prefers-reduced-motion:reduce){.dot-field .dot{transition:none}.dot-field .band{animation:none;opacity:.18}}
 </style>
 </head>
 <body>
@@ -300,6 +342,7 @@ section[id],[id="contact"]{scroll-margin-top:76px}
 <!-- HERO with 2-tier subhead -->
 <section class="hero">
   <div class="container">
+   <div class="hero-grid">
     <div class="hero-content">
       <div class="hero-badge">사내 맞춤 교육 & 컨설팅</div>
       <h1>AI는 초안을 만들고,<br><em>판단은 사람이 합니다</em></h1>
@@ -311,6 +354,13 @@ section[id],[id="contact"]{scroll-margin-top:76px}
         <a href="lectures-history.html" class="btn-secondary">전체 강의 기록</a>
       </div>
     </div>
+    <div class="hero-visual">
+      <div class="dot-field" id="dotField" role="img" aria-label="흩어진 점들이 사람의 판단으로 추세선 주변에 모인다. 점은 선에 완전히 붙지 않고 오차를 남긴다.">
+        <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon class="band" points="0,66 100,14 100,34 0,86"/><line x1="0" y1="76" x2="100" y2="24" stroke="#2d8f85" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+      </div>
+      <div class="dot-field-foot"><span class="dot-caption" id="dotCaption">AI 초안 · 흩어진 데이터</span><button type="button" class="dot-btn" id="dotBtn">판단하기</button></div>
+    </div>
+   </div>
   </div>
 </section>
 
@@ -318,9 +368,9 @@ section[id],[id="contact"]{scroll-margin-top:76px}
 <section class="bg-card-section">
   <div class="container">
     <div class="diff-grid">
-      <div class="diff-card"><div class="diff-icon green">📊</div><h3>실전 시나리오로 실습</h3><p>실전 비즈니스 시나리오를 데이터로 풉니다.<br>손에 남는 것은 양식 · 산식 · 보고서의 구조.</p></div>
-      <div class="diff-card"><div class="diff-icon amber">🎯</div><h3>교육부터 컨설팅까지</h3><p>ICT 대기업 두 곳에서 모두 7차례.<br>직접 분석하고 전략을 수립한 컨설팅 경력.</p></div>
-      <div class="diff-card"><div class="diff-icon blue">✅</div><h3>34년 실무·교육 경력</h3><p>실무를 거치고,<br>2010년부터 KSA · KPC의 공개강의와<br>80여 곳의 기업 · 공공기관 · 대학에서<br>사내 맞춤형 교육을 진행합니다.</p></div>
+      <div class="diff-card"><div class="diff-num"><span class="count" data-to="70">70</span><small>%</small></div><h3>실전 시나리오로 실습</h3><p>강의의 70%는 실습입니다.<br>실전 비즈니스 시나리오를 데이터로 풉니다.<br>손에 남는 것은 양식 · 산식 · 보고서의 구조.</p></div>
+      <div class="diff-card"><div class="diff-num"><span class="count" data-to="7">7</span><small>차례</small></div><h3>교육부터 컨설팅까지</h3><p>ICT 대기업 두 곳에서 모두 7차례.<br>직접 분석하고 전략을 수립한 컨설팅 경력.</p></div>
+      <div class="diff-card"><div class="diff-num"><span class="count" data-to="34">34</span><small>년+</small></div><h3>34년 실무·교육 경력</h3><p>실무를 거치고,<br>2010년부터 KSA · KPC의 공개강의와<br>80여 곳의 기업 · 공공기관 · 대학에서<br>사내 맞춤형 교육을 진행합니다.</p></div>
     </div>
   </div>
 </section>
@@ -645,6 +695,35 @@ section[id],[id="contact"]{scroll-margin-top:76px}
   </div>
 </section>
 
+<!-- TRY · 30초 판단 체험 (판단 노트 1편과 연결) -->
+<section id="try" class="bg-card-section">
+  <div class="container">
+    <div class="section-label">Try</div>
+    <h2 class="section-title">30초 판단 체험 — 이 단가, 지울까요?</h2>
+    <div class="try-wrap">
+      <div>
+        <p class="try-q">같은 부품의 최근 발주 12건입니다.<br>7번째 단가만 유난히 높습니다.<br>평균 단가를 보고해야 한다면, 어떻게 하겠습니까?</p>
+        <div class="try-choices">
+          <button type="button" class="try-choice" data-pick="del" aria-pressed="false">입력 오류일 겁니다. 지우고 평균을 냅니다.</button>
+          <button type="button" class="try-choice" data-pick="check" aria-pressed="false">남겨 두고, 왜 높은지 먼저 확인합니다.</button>
+          <button type="button" class="try-choice" data-pick="keep" aria-pressed="false">그대로 넣고 12건 평균을 보고합니다.</button>
+        </div>
+      </div>
+      <div>
+        <div class="try-chart" id="tryChart" role="img" aria-label="발주 12건의 단가 막대그래프. 7번째만 1,290원으로 높고 나머지는 985~1,040원 사이."><div class="try-band" id="tryBand"></div></div>
+        <div class="try-axis"><span>발주 1</span><span>발주 7 · 1,290원</span><span>발주 12</span></div>
+        <div class="try-result" id="tryResult" aria-live="polite">
+          <div class="try-verdict" id="tryVerdict"></div>
+          <p class="try-explain" id="tryExplain"></p>
+          <p class="try-note">초록 띠는 나머지 11건의 평균 ±2σ(약 976~1,045원)입니다. 2σ 밖은 "지우라"가 아니라 "확인하라"는 신호입니다.</p>
+          <a class="try-link" href="https://blog.naver.com/data_analytics/224466196630" target="_blank" rel="noopener">판단 노트 1편 — 이상한 단가를 무조건 지우면 안 되는 이유 ↗</a>
+        </div>
+        <p class="try-sample">예시 데이터입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOTES · 판단 노트 (원문은 네이버 블로그, 여기는 링크만) -->
 <section id="notes">
   <div class="container">
@@ -802,6 +881,68 @@ function switchProcess(which,ev){
   (ev?ev.currentTarget:event.currentTarget).classList.add('active');
   document.getElementById('process-'+which).classList.add('active')
 }
+
+/* v4 · 동적 요소 */
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 1) 히어로: 흩어진 점 → 추세선(오차는 남김)
+  var field=document.getElementById('dotField'),btn=document.getElementById('dotBtn'),cap=document.getElementById('dotCaption');
+  if(field){
+    var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+    var dots=[],n=28;
+    for(var i=0;i<n;i++){
+      var x=0.03+0.94*(i/(n-1)),y=0.76-0.52*x+(rnd()-0.5)*0.16;
+      var d=document.createElement('span');d.className='dot';d.setAttribute('aria-hidden','true');
+      d.style.transitionDelay=(i*0.03).toFixed(2)+'s';
+      var p={sx:0.05+rnd()*0.9,sy:0.05+rnd()*0.9,ax:x,ay:y,el:d};
+      d.style.left=(p.sx*100)+'%';d.style.top=(p.sy*100)+'%';
+      field.appendChild(d);dots.push(p);
+    }
+    var aligned=false,touched=false;
+    function set(a){
+      aligned=a;field.classList.toggle('aligned',a);
+      dots.forEach(function(p){p.el.style.left=((a?p.ax:p.sx)*100)+'%';p.el.style.top=((a?p.ay:p.sy)*100)+'%'});
+      btn.textContent=a?'다시 흩기':'판단하기';
+      cap.textContent=a?'사람의 판단 · 선은 긋되 오차는 남긴다':'AI 초안 · 흩어진 데이터';
+    }
+    btn.addEventListener('click',function(){touched=true;set(!aligned)});
+    setTimeout(function(){if(!touched)set(true)},2500);
+  }
+  // 2) 숫자 카운트업
+  var counts=document.querySelectorAll('.count');
+  function run(el){
+    var to=+el.dataset.to;if(reduce){el.textContent=to;return}
+    var t0=null;el.textContent='0';
+    function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1300),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e);if(k<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target)}})},{threshold:.6});
+    counts.forEach(function(c){io.observe(c)});
+  }
+  // 3) 30초 판단 체험 (단가 2σ)
+  var chart=document.getElementById('tryChart');
+  if(chart){
+    var vals=[1020,985,1010,1040,995,1005,1290,1015,990,1030,1000,1025],lo=900,hi=1320;
+    function pct(v){return ((v-lo)/(hi-lo)*100).toFixed(1)+'%'}
+    vals.forEach(function(v,i){var b=document.createElement('div');b.className='try-bar'+(i===6?' odd':'');b.style.height=pct(v);chart.appendChild(b)});
+    var band=document.getElementById('tryBand');band.style.bottom=pct(975.7);band.style.height=((1045.3-975.7)/(hi-lo)*100).toFixed(1)+'%';
+    var V={
+      del:['원인을 모른 채 지웠습니다.','긴급 발주였다면 진짜 비용이 사라집니다. 단위를 잘못 적은 것이라면 지우는 게 맞습니다. 어느 쪽인지는 확인해야 압니다.'],
+      check:['좋은 판단입니다.','긴급 발주·소량 구매·단위 오기 중 무엇인지 먼저 확인합니다. 평균은 1,011원(제외)과 1,034원(포함)을 나란히 보고합니다.'],
+      keep:['평균이 부풀었습니다.','12건 평균은 1,034원입니다. 한 건 때문에 협상 기준 단가가 23원 올라갑니다.']
+    };
+    document.querySelectorAll('.try-choice').forEach(function(c){
+      c.addEventListener('click',function(){
+        document.querySelectorAll('.try-choice').forEach(function(o){o.setAttribute('aria-pressed',o===c?'true':'false')});
+        var v=V[c.dataset.pick];
+        document.getElementById('tryVerdict').textContent=v[0];
+        document.getElementById('tryExplain').textContent=v[1];
+        chart.classList.add('answered');document.getElementById('tryResult').classList.add('show');
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
