@@ -374,12 +374,16 @@ strong,b{font-weight:500}
 .cta-section .btn-primary{background:#fff;color:var(--teal)}.cta-section .btn-primary:hover{background:#EFE8DC;color:var(--teal)}
 .cta-contact a{color:var(--accent-on-brand)}
 nav{background:rgba(255,255,255,.97)}
+
+/* === 2026-11-11 피드백 반영 === */
+body{word-break:keep-all;overflow-wrap:anywhere}
+@media(max-width:768px){.nav-mobile{display:grid!important;grid-template-columns:repeat(5,1fr);gap:4px;overflow:visible}.nav-mobile a{text-align:center;padding:6px 2px!important;font-size:12px!important;white-space:nowrap}}
 </style>
 </head>
 <body>
 
 <nav id="nav"><div class="nav-inner"><a href="#" class="nav-logo" aria-label="Barefoot · 백승훈 교육 & 컨설팅"><img class="nav-logo-mark" src="assets/barefoot-logo-horizontal-brown.svg" alt="BAREFOOT"><span class="nav-logo-sep" aria-hidden="true"></span><span class="nav-logo-name">백승훈 · 교육 & 컨설팅</span></a><div class="nav-links"><a href="#about" class="nav-link">강사 소개</a><a href="courses.html" class="nav-link">교육 과정</a><a href="#references" class="nav-link">레퍼런스</a><a href="#notes" class="nav-link">판단 노트</a></div><a href="#contact" class="nav-cta">강의·컨설팅 문의</a></div>
-<div class="nav-mobile"><a href="#about">강사 소개</a><a href="courses.html">교육 과정</a><a href="#references">레퍼런스</a><a href="#notes">판단 노트</a><a href="#contact">강의·컨설팅 문의</a></div></nav>
+<div class="nav-mobile"><a href="#about">강사 소개</a><a href="courses.html">교육 과정</a><a href="#references">레퍼런스</a><a href="#notes">판단 노트</a><a href="#contact">문의</a></div></nav>
 
 <!-- HERO with 2-tier subhead -->
 <section class="hero">
@@ -431,7 +435,7 @@ nav{background:rgba(255,255,255,.97)}
         <div class="profile-title">베어풋 컴퍼니 대표</div>
         <div class="profile-stats">
           <div class="stat"><div class="stat-num">34+</div><div class="stat-label">실무·교육 경력(년)</div></div>
-          <div class="stat"><div class="stat-num">163+</div><div class="stat-label">강의 진행 횟수</div></div>
+          <div class="stat"><div class="stat-num">163+</div><div class="stat-label">강의 횟수(2010~2025)</div></div>
         </div>
       </div>
 
@@ -442,7 +446,7 @@ nav{background:rgba(255,255,255,.97)}
           <p><strong>AI 시대 의사결정 시스템 설계 회사.</strong></p>
           <p>완전 자동화도 완전 비자동화도 답이 아닌 영역.<br>환경이 결정에 반응하는 의사결정의 영역.<br>그 자리에 전문성을 둡니다.</p>
           <p>강의 · 컨설팅 · 출판, 세 라인 모두<br>같은 방법론(S-O-C-D-R · 판단 하네스 · 4사분면)에서 나옵니다.</p>
-          <div class="barefoot-promise"><strong>방법은 베어풋이, 결과는 의사결정자가.</strong><br>결과 보증을 하지 않습니다.<br>결정의 책임은 양도 불가능합니다.</div>
+          <div class="barefoot-promise"><strong>방법은 베어풋이, 결과는 의사결정자가.</strong><br>분석 근거와 가정을 함께 드립니다.<br>마지막 결정과 그 책임은 결정하는 사람에게 있습니다.</div>
         </div>
 
         <div class="detail-block">
@@ -483,12 +487,12 @@ nav{background:rgba(255,255,255,.97)}
         <div class="stanza">
           <p>우리가 결정하는 순간,<br>채널 · 고객 · 경쟁사가 반응합니다.</p>
           <p><strong>우리 결정이 환경의 게임 룰을 바꿉니다.</strong></p>
-          <p>그래서 한 번 푸는 최적화는<br>6~18개월 후 부패합니다.</p>
+          <p>그래서 한 번 푼 최적화도<br>환경이 바뀌면 다시 풀어야 합니다.</p>
         </div>
         <div class="stanza">
           <p>AI 시대에 달라진 것은<br><strong>생산이 자동화</strong>되었다는 점.</p>
           <p>그래서 <strong>판단의 자리</strong>가 더 중요해졌습니다.</p>
-          <p>자동화된 결과물의 70%가 <span class="muted">그럴듯한 평범함</span>으로 채워질 때,<br><strong>90점을 골라내는 판단</strong>이 조직의 진짜 자산이 됩니다.</p>
+          <p>자동화된 결과물이 <span class="muted">그럴듯한 평범함</span>으로 채워질 때,<br><strong>쓸 만한 것을 골라내는 판단</strong>이 조직의 진짜 자산이 됩니다.</p>
         </div>
         <div class="stanza">
           <p>베어풋 컴퍼니가 전문으로 하는 영역은<br><strong>완전 자동화도 완전 비자동화도 답이 아닌 영역</strong>.</p>
@@ -519,7 +523,7 @@ nav{background:rgba(255,255,255,.97)}
           <p class="what"><em>측정 기준이 목표가 되는 순간, 그 기준은 깨진다.</em><br>1975년 영국 통화정책 분석. 정책 도구가 된 지표가 더 이상 의미 있는 측정값이 아니게 되는 메커니즘. <span class="muted">Goodhart's Law.</span></p>
         </div>
         <div class="closing">
-          <p>네 학자가 네 영역에서 짚은 한 가지.<br><strong>우리가 결정하는 순간 환경이 반응한다.</strong></p>
+          <p>베어풋의 관점에 영향을 준 네 영역의 논의.<br><strong>우리가 결정하는 순간 환경이 반응한다.</strong></p>
           <p style="margin-top:10px">정답은 한 번 찾는 것이 아니라 매번 다시 찾는 것.<br>그래서 베어풋이 만드는 것은<br><strong>정답을 한 번에 찾아주는 시스템이 아니라,<br>환경의 반응을 따라가는 시스템</strong>.</p>
         </div>
       </div>
@@ -547,7 +551,7 @@ nav{background:rgba(255,255,255,.97)}
         <div class="layer-en">판단 하네스</div>
         <div class="layer-ko">결정의 검증 장치</div>
         <span class="layer-role">블루팀 · 레드팀 · 결정 카드</span>
-        <p class="layer-desc">결정의 근거와 가정을 흔들어 보는 장치. AI가 만든 70점 그럴듯함을 90점으로 끌어올리는 자리.</p>
+        <p class="layer-desc">결정의 근거와 가정을 흔들어 보는 장치. AI가 만든 그럴듯한 초안을 업무에 쓸 수 있는 결과로 검증하는 자리.</p>
       </div>
       <div class="method-card axis-quad">
         <div class="layer-num">QUADRANT</div>
@@ -705,8 +709,8 @@ nav{background:rgba(255,255,255,.97)}
     <!-- 전체 강의 보기 링크 -->
     <div style="margin-top:32px;padding:22px 26px;background:var(--bg);border:1px dashed var(--border);border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
       <div>
-        <p style="font-size:14.5px;color:var(--text);font-weight:500;margin-bottom:4px">2010 ~ 2025 · 16년 · 163회 +</p>
-        <p style="font-size:13px;color:var(--text-sec);line-height:1.65;margin:0">정기 공개강의 13개 영역과 기업 · 공공기관 · 대학의 사내 강의 145+회.</p>
+        <p style="font-size:14.5px;color:var(--text);font-weight:500;margin-bottom:4px">2010 ~ 2025 · 16년 · 강의 163회 +</p>
+        <p style="font-size:13px;color:var(--text-sec);line-height:1.65;margin:0">공개강의 14개 영역(KPC · KSA)과 기업 · 공공기관 · 대학 사내 강의 145회 +.</p>
       </div>
       <a href="lectures-history.html" style="font-size:13.5px;color:var(--teal);text-decoration:none;font-weight:500;white-space:nowrap;padding:10px 18px;background:var(--bg-card);border:1px solid var(--teal);border-radius:6px;transition:all .2s">전체 강의 연도별 보기 →</a>
     </div>
@@ -880,8 +884,8 @@ nav{background:rgba(255,255,255,.97)}
   <div class="container">
     <div class="cta-section" id="contact">
       <h2 class="section-title">교육 · 컨설팅을 문의해 주세요</h2>
-      <p>과정 · 일정 · 인원 · 예산, 자유롭게 상담합니다.<br>커리큘럼 제안서를 2영업일 이내에 보내드립니다.</p>
-      <a href="mailto:zau0hon2@gmail.com?subject=[교육/컨설팅 문의]&body=안녕하세요.%0A%0A1. 기업명:%0A2. 문의 유형(교육/컨설팅):%0A3. 희망 과정 또는 프로젝트:%0A4. 대상 인원:%0A5. 희망 일정:%0A6. 기타:%0A" class="btn-primary">✉ 이메일로 문의하기</a>
+      <p>과정 · 일정 · 인원 · 예산, 자유롭게 상담합니다.<br>진행 가능 여부는 2영업일 안에 회신합니다.<br>커리큘럼 제안서는 요구사항을 협의한 뒤 보내드립니다.</p>
+      <a href="mailto:zau0hon2@gmail.com?subject=%5B%EA%B5%90%EC%9C%A1%2F%EC%BB%A8%EC%84%A4%ED%8C%85%20%EB%AC%B8%EC%9D%98%5D&amp;body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.%0A%0A1.%20%EA%B8%B0%EC%97%85%EB%AA%85%3A%0A2.%20%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%28%EA%B5%90%EC%9C%A1%2F%EC%BB%A8%EC%84%A4%ED%8C%85%29%3A%0A3.%20%ED%9D%AC%EB%A7%9D%20%EA%B3%BC%EC%A0%95%20%EB%98%90%EB%8A%94%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%3A%0A4.%20%EB%8C%80%EC%83%81%20%EC%9D%B8%EC%9B%90%3A%0A5.%20%ED%9D%AC%EB%A7%9D%20%EC%9D%BC%EC%A0%95%3A%0A6.%20%EA%B8%B0%ED%83%80%3A%0A" class="btn-primary">✉ 이메일로 문의하기</a>
       <div class="cta-contact"><a href="mailto:zau0hon2@gmail.com">zau0hon2@gmail.com</a></div>
     </div>
   </div>

@@ -6,7 +6,8 @@
 <title>강의 진행 기록 · 백승훈</title>
 <meta name="description" content="KPC · KSA 정기 공개강의 14개 영역과 기업 · 공공기관 · 대학에서 진행한 사내 강의 기록.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{--bg:#f0f5f1;--bg-card:#fff;--teal:#3aaa9e;--teal-dark:#2d8f85;--teal-light:#e6f5f3;--amber:#d4a843;--amber-light:#fdf5e3;--blue:#2e6bb0;--blue-light:#e8f0fa;--plum:#88687a;--text:#2c3e2d;--text-sec:#6b7c6d;--text-muted:#94a396;--border:#dce5de;--border-light:#e8ede9}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -79,14 +80,43 @@ footer{padding:32px 0;border-top:1px solid var(--border-light);font-size:13px;co
   .open-grid{grid-template-columns:1fr}
   .year-row{grid-template-columns:1fr;gap:8px;padding:14px 16px}
 }
+
+/* === Barefoot Company CI 적용 · 2026-11-11 === */
+:root{--bg:#FFFFFF;--bg-card:#FFFFFF;--teal:#3B2C0D;--teal-dark:#3B2C0D;--teal-light:#EFE8DC;--amber:#9C5B22;--amber-light:#FAF7F2;--blue:#8A7655;--blue-light:#EFE8DC;--plum:#7A6647;--text:#3B2C0D;--text-sec:#7A6647;--text-muted:#7A6647;--border:#E3DACB;--border-light:#E3DACB;--f-head:'Barlow','Pretendard',system-ui,sans-serif;--f-body:'Pretendard','Barlow',system-ui,sans-serif}
+body{font-family:var(--f-body);background:#FAF7F2;word-break:keep-all;overflow-wrap:anywhere}
+nav{background:rgba(255,255,255,.92);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--f-body);font-weight:400}
+.nav-logo-mark{display:block;height:13px;width:auto}.nav-logo-sep{display:block;width:1px;height:18px;background:var(--border)}.nav-logo-name{font-size:15px;color:var(--text)}
+.history-hero{background:#3B2C0D;color:#fff;padding:132px 0 56px;margin-bottom:56px}
+.history-hero .section-label{color:#E0A25E;font-family:'Barlow',sans-serif;font-weight:400;letter-spacing:.18em}
+.history-hero h1{font-family:var(--f-head);font-weight:300;letter-spacing:-.5px;color:#fff}
+.history-hero h1 em{color:#E0A25E}
+.history-hero p.lead{color:#C9BBA0}
+.cat-head{border-bottom:1px solid var(--text)}
+.cat-num{font-family:'Barlow',sans-serif;font-weight:300;color:#9C5B22}
+.cat-name{font-family:var(--f-head);font-weight:300}
+.open-card,.year-row,.history-footer,.ref-logos span,.org-pill,.open-host{border-radius:0}
+.open-card{border-left:1px solid var(--border)}
+.open-card:hover{box-shadow:none;border-color:var(--text-muted);transform:none}
+.open-card.no-link:hover{border-color:var(--border)}
+.open-title,.yr-num{font-family:var(--f-head);font-weight:400}
+.open-host.kpc,.open-host.ksa{font-family:'Barlow',sans-serif;font-weight:500;letter-spacing:.12em;background:transparent;border:1px solid currentColor}
+.open-host.kpc{color:#3B2C0D}.open-host.ksa{color:#9C5B22}
+.open-when{font-family:var(--f-body)}
+.open-when strong{color:#9C5B22;font-weight:500}
+.ref-category-label::before{border-radius:0}
+.ref-category-label.cat-corp::before{background:#3B2C0D}.ref-category-label.cat-public::before{background:#9C5B22}.ref-category-label.cat-univ::before{background:#8A7655}
+.history-footer a{color:#9C5B22}
+@media(max-width:560px){.nav-logo{gap:10px}.nav-logo-mark{height:11px}.nav-logo-name{font-size:13px}.nav-back{font-size:13px}}
+@media(max-width:420px){.nav-logo-sep,.nav-logo-name{display:none}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">백승훈 <span>·</span> 교육 & 컨설팅</a>
-    <a href="index.html" class="nav-back">← 메인으로 돌아가기</a>
+    <a href="index.html" class="nav-logo" aria-label="Barefoot · 백승훈 교육 & 컨설팅 홈"><img class="nav-logo-mark" src="assets/barefoot-logo-horizontal-brown.svg" alt="BAREFOOT"><span class="nav-logo-sep" aria-hidden="true"></span><span class="nav-logo-name">백승훈 · 교육 & 컨설팅</span></a>
+    <a href="index.html" class="nav-back">← 홈</a>
   </div>
 </nav>
 
