@@ -377,6 +377,52 @@ nav{background:rgba(255,255,255,.97)}
 
 .loop-field{position:relative;height:380px;border-left:1px solid #6B5A3D;border-bottom:1px solid #6B5A3D}.loop-field canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.dot-caption{transition:opacity .18s}@media(max-width:768px){.loop-field{height:300px}}
 .loop-lede{font-family:var(--f-head);font-weight:300;font-size:19px;line-height:1.5;color:#fff;margin:0 0 16px;letter-spacing:-.3px}.loop-field{height:400px}.hero .dot-field-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:16px;margin-top:16px}.dot-caption{font-size:14.5px!important;line-height:1.5;color:#fff!important;min-height:3em;display:block;font-weight:400}.dot-btn{white-space:nowrap;flex:none}@media(max-width:768px){.loop-field{height:340px}.loop-lede{font-size:16px;margin-bottom:12px}.hero .dot-field-foot{grid-template-columns:1fr;gap:10px}.dot-caption{font-size:14px!important;min-height:3em}.dot-btn{justify-self:start}}
+
+/* === 홈 재구성 · 2026-11-11 === */
+.hero-links{margin-top:18px;font-size:14px;color:#C9BBA0;display:flex;gap:10px;flex-wrap:wrap}
+.hero-links a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px}
+.hero-links a:hover{border-color:#E0A25E;color:#E0A25E}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--text);margin-top:8px}
+.area-card{display:flex;flex-direction:column;padding:22px 20px 20px 0;margin-right:20px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:color .2s}
+.area-card:nth-child(4n){margin-right:0}
+.area-no{font-family:'Barlow',sans-serif;font-size:12px;letter-spacing:.18em;color:var(--accent)}
+.area-card h3{font-family:var(--f-head);font-size:19px;font-weight:300;letter-spacing:-.3px;margin:8px 0 8px}
+.area-out{font-size:14px;line-height:1.7;color:var(--text-sec);flex:1;margin-bottom:12px}
+.area-go{font-size:13px;font-weight:500;color:var(--text)}
+.area-card:hover h3,.area-card:hover .area-go{color:var(--accent)}
+.area-custom .area-no{font-size:16px}
+.ex-head{margin-top:64px}
+.ex-desc{margin-bottom:24px}
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ex{margin:0;display:flex;flex-direction:column}
+.ex-frame{background:#fff;border:1px solid var(--border);flex:1;display:flex;flex-direction:column;font-family:var(--f-body)}
+.ex-bar{display:flex;justify-content:space-between;align-items:center;background:#3B2C0D;color:#fff;font-size:12.5px;padding:8px 12px}
+.ex-bar em{font-style:normal;font-size:11px;color:#E0A25E;border:1px solid #E0A25E;padding:0 6px;line-height:1.6}
+.ex-frame table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5}
+.ex-frame th{background:#FAF7F2;color:var(--text-sec);font-weight:500;text-align:left;padding:7px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.ex-frame td{padding:8px 10px;border-bottom:1px solid #EFE8DC;vertical-align:top;color:var(--text)}
+.ex-dict td:first-child,.ex-sys td:nth-child(3){font-family:'Barlow',sans-serif;color:var(--accent);white-space:nowrap}
+.ex-dict td:nth-child(2){white-space:nowrap;font-weight:500}
+.ex-meta{margin-top:auto;font-size:11.5px;color:var(--text-muted);padding:8px 12px;border-top:1px solid var(--border)}
+.ex-report{display:grid;grid-template-columns:1.25fr 1fr;flex:1}
+.rp-main{padding:12px;border-right:1px solid var(--border)}
+.rp-row{font-size:12.5px;line-height:1.55;padding:6px 0;border-bottom:1px solid #EFE8DC;color:var(--text)}
+.rp-row:last-child{border-bottom:none}
+.rp-row span{display:block;font-size:11px;color:var(--text-muted);margin-bottom:1px}
+.rp-check{padding:12px;background:#FAF7F2}
+.rp-check-h{font-size:11px;font-weight:500;color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+.ck{position:relative;font-size:12px;line-height:1.5;padding:0 0 9px 16px;color:var(--text)}
+.ck::before{position:absolute;left:0;top:0;font-weight:600}
+.ck.ok::before{content:'✓';color:var(--text)}
+.ck.mine::before{content:'✎';color:var(--accent)}
+.st{display:inline-block;font-size:11.5px;padding:1px 7px;white-space:nowrap}
+.st.auto{background:#3B2C0D;color:#fff}
+.st.hum{border:1px solid var(--accent);color:var(--accent)}
+.st.miss{border:1px dashed var(--text-muted);color:var(--text-muted)}
+.ex figcaption{font-size:14px;line-height:1.7;color:var(--text-sec);margin-top:12px}
+.ex figcaption b{display:block;font-family:var(--f-head);font-size:17px;font-weight:400;color:var(--text);margin-bottom:2px}
+@media(max-width:960px){.area-grid{grid-template-columns:repeat(2,1fr)}.area-card:nth-child(2n){margin-right:0}.area-card:nth-child(4n){margin-right:0}.area-card:nth-child(2n+1){margin-right:20px}.ex-grid{grid-template-columns:1fr;max-width:560px}}
+@media(max-width:520px){.area-grid{grid-template-columns:1fr}.area-card{margin-right:0!important}.ex-report{grid-template-columns:1fr}.rp-main{border-right:none;border-bottom:1px solid var(--border)}}
 /* === 2026-11-11 피드백 반영 === */
 body{word-break:keep-all;overflow-wrap:anywhere}
 @media(max-width:768px){.nav-mobile{display:grid!important;grid-template-columns:repeat(5,1fr);gap:4px;overflow:visible}.nav-mobile a{text-align:center;padding:6px 2px!important;font-size:12px!important;white-space:nowrap}}
@@ -397,10 +443,10 @@ body{word-break:keep-all;overflow-wrap:anywhere}
       <p class="hero-tagline">AI가 결정까지 맡으려는 시대에,<br><strong>베어풋은 판단의 자리를 지키는 도구</strong>를 만듭니다.</p>
       <p class="hero-desc">교육에선 실전 비즈니스 시나리오를 데이터로 풉니다.<br>컨설팅에선 귀사 데이터를 직접 분석합니다.<br>끝나면 손에 남는 것은 양식 · 산식 · 보고서의 구조.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">강의·컨설팅 문의 →</a>
-        <a href="#notes" class="btn-secondary">판단 노트 읽기</a>
-        <a href="lectures-history.html" class="btn-secondary">전체 강의 기록</a>
+        <a href="courses.html" class="btn-primary">교육 과정 보기 →</a>
+        <a href="#contact" class="btn-secondary">맞춤 교육 문의</a>
       </div>
+      <p class="hero-links"><a href="#notes">판단 노트 읽기</a><span aria-hidden="true">·</span><a href="lectures-history.html">전체 강의 기록</a></p>
     </div>
     <div class="hero-visual">
       <p class="loop-lede">사람의 판단을 규칙으로 남겨, 다음 업무에 다시 씁니다.</p>
@@ -422,154 +468,84 @@ body{word-break:keep-all;overflow-wrap:anywhere}
   </div>
 </section>
 
-<!-- ABOUT (강화: 베어풋 정체성 + 책 시리즈) -->
-<section id="about" class="bg-card-section">
+<!-- SERVICES · 맡길 수 있는 일과 남는 결과물 (2026-11-11 재구성) -->
+<section id="services">
   <div class="container">
-    <div class="section-label">Instructor</div>
-    <h2 class="section-title">강사 소개</h2>
-    <div style="height:32px"></div>
+    <div class="section-label">What you get</div>
+    <h2 class="section-title">맡길 수 있는 일과 남는 결과물</h2>
+    <p class="section-desc">업무에서 내려야 하는 판단으로 과정을 나눴습니다.<br>모든 과정은 다음 업무에 다시 쓰는 결과물 하나를 남깁니다.</p>
 
-    <div class="profile-layout">
-      <div class="profile-info">
-        <div class="profile-avatar">백</div>
-        <div class="profile-name">백승훈</div>
-        <div class="profile-title">베어풋 컴퍼니 대표</div>
-        <div class="profile-stats">
-          <div class="stat"><div class="stat-num">34+</div><div class="stat-label">실무·교육 경력(년)</div></div>
-          <div class="stat"><div class="stat-num">163+</div><div class="stat-label">강의 횟수(2010~2025)</div></div>
-        </div>
-      </div>
-
-      <div>
-        <!-- Barefoot Company identity (v2.4 — 줄바꿈 + 시 톤) -->
-        <div class="barefoot-block">
-          <h3>베어풋 컴퍼니</h3>
-          <p><strong>AI 시대 의사결정 시스템 설계 회사.</strong></p>
-          <p>완전 자동화도 완전 비자동화도 답이 아닌 영역.<br>환경이 결정에 반응하는 의사결정의 영역.<br>그 자리에 전문성을 둡니다.</p>
-          <p>강의 · 컨설팅 · 출판, 세 라인 모두<br>같은 방법론(S-O-C-D-R · 판단 하네스 · 4사분면)에서 나옵니다.</p>
-          <div class="barefoot-promise"><strong>방법은 베어풋이, 결과는 의사결정자가.</strong><br>분석 근거와 가정을 함께 드립니다.<br>마지막 결정과 그 책임은 결정하는 사람에게 있습니다.</div>
-        </div>
-
-        <div class="detail-block">
-          <h3>경력</h3>
-          <p><strong>제일제당(現 CJ)</strong> · <strong>SK Telecom</strong> · <strong>SK Communications</strong> · <strong>현대캐피탈</strong> · 청담러닝.<br>마케팅 · 전략 · 데이터 분석 실무를 거쳤습니다.</p>
-          <p style="margin-top:10px">현재 베어풋 컴퍼니를 운영하며<br>기업 교육과 컨설팅을 진행합니다.</p>
-        </div>
-
-        <div class="detail-block">
-          <h3>학력</h3>
-          <p><strong>서울대학교</strong> 경영학과 학사<br><strong>KAIST</strong> 대학원 경영과학과 석사 (마케팅 Modeling 전공)</p>
-        </div>
-
-        <div class="detail-block">
-          <h3>저서</h3>
-          <p><strong>판단의 기술</strong> <span style="color:var(--text-muted);font-size:13px">· 2025</span></p>
-          <p style="margin-top:10px">AI 시대,<br>사람이 내려야 할 판단의 구조.<br>S-O-C-D-R 프레임워크의 이론적 기반.</p>
-        </div>
-
-        <div class="detail-block">
-          <h3>교육 철학</h3>
-          <p><strong>"AI는 초안을 만들고, 판단은 사람이 합니다."</strong></p>
-          <p style="margin-top:10px">도구 사용법이 아닌 <strong>판단의 구조</strong>를 가르칩니다.<br>AI가 만든 결과물을 검증하고,<br>조직 맥락을 반영해<br>보고서를 완성하는 과정.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEW · WHY section -->
-<section class="why-section" id="why">
-  <div class="container">
-    <div class="section-label">Why</div>
-    <h2 class="section-title">왜 판단인가</h2>
-    <div class="why-content">
-      <p class="why-lead">단백질 접힘처럼 자연이 정답을 갖고 있는 문제에서는<br>AI가 답을 찾습니다.<br>그러나 비즈니스 의사결정에는<br><em>정답이 어디에도 없습니다</em>.</p>
-      <div class="why-body poem-block">
-        <div class="stanza">
-          <p>우리가 결정하는 순간,<br>채널 · 고객 · 경쟁사가 반응합니다.</p>
-          <p><strong>우리 결정이 환경의 게임 룰을 바꿉니다.</strong></p>
-          <p>그래서 한 번 푼 최적화도<br>환경이 바뀌면 다시 풀어야 합니다.</p>
-        </div>
-        <div class="stanza">
-          <p>AI 시대에 달라진 것은<br><strong>생산이 자동화</strong>되었다는 점.</p>
-          <p>그래서 <strong>판단의 자리</strong>가 더 중요해졌습니다.</p>
-          <p>자동화된 결과물이 <span class="muted">그럴듯한 평범함</span>으로 채워질 때,<br><strong>쓸 만한 것을 골라내는 판단</strong>이 조직의 진짜 자산이 됩니다.</p>
-        </div>
-        <div class="stanza">
-          <p>베어풋 컴퍼니가 전문으로 하는 영역은<br><strong>완전 자동화도 완전 비자동화도 답이 아닌 영역</strong>.</p>
-          <p>환경이 결정에 반응하는 의사결정의 영역.</p>
-          <p>강의 · 컨설팅 · 출판, 모든 자리에 같은 약속이 박혀 있습니다.</p>
-        </div>
-      </div>
-      <div class="why-promise">
-        <blockquote>의지와 집중을 들고 오면, 결과를 만드는 방법이 손에 남는다.</blockquote>
-        <div class="promise-meta">베어풋 컴퍼니의 모든 제공물에 들어가는 첫 줄</div>
-      </div>
-      <div class="lineage-block">
-        <div class="note-label">학술 lineage · 같은 본질, 네 개의 영역</div>
-        <div class="scholar">
-          <div class="who">George Soros · 시장</div>
-          <p class="what"><em>시장에 참여하는 자가 시장을 만든다.</em><br>참여자의 인식이 가격을 만들고, 가격이 다시 인식을 만든다. <span class="muted">Reflexivity.</span></p>
-        </div>
-        <div class="scholar">
-          <div class="who">Donald MacKenzie · 금융 모델</div>
-          <p class="what"><em>모델은 시장을 비추는 카메라가 아니라, 시장을 만드는 엔진이다.</em><br>"An Engine, Not a Camera"(2006). Black-Scholes 옵션 공식이 시장을 그 공식대로 움직이게 만든 사례. <span class="muted">Performativity.</span></p>
-        </div>
-        <div class="scholar">
-          <div class="who">Robert Lucas · 경제 정책</div>
-          <p class="what"><em>정책이 바뀌면 사람의 기대가 바뀌고, 과거의 모델은 더 이상 맞지 않는다.</em><br>1976년 논문 "Econometric Policy Evaluation: A Critique". 1995년 노벨 경제학상. <span class="muted">Lucas Critique.</span></p>
-        </div>
-        <div class="scholar">
-          <div class="who">Charles Goodhart · 통계 지표</div>
-          <p class="what"><em>측정 기준이 목표가 되는 순간, 그 기준은 깨진다.</em><br>1975년 영국 통화정책 분석. 정책 도구가 된 지표가 더 이상 의미 있는 측정값이 아니게 되는 메커니즘. <span class="muted">Goodhart's Law.</span></p>
-        </div>
-        <div class="closing">
-          <p>베어풋의 관점에 영향을 준 네 영역의 논의.<br><strong>우리가 결정하는 순간 환경이 반응한다.</strong></p>
-          <p style="margin-top:10px">정답은 한 번 찾는 것이 아니라 매번 다시 찾는 것.<br>그래서 베어풋이 만드는 것은<br><strong>정답을 한 번에 찾아주는 시스템이 아니라,<br>환경의 반응을 따라가는 시스템</strong>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- METHOD section · 판단의 구조를 가르치는 방법 -->
-<section id="method">
-  <div class="container">
-    <div class="section-label">Method</div>
-    <h2 class="section-title">판단의 구조를 가르치는 방법</h2>
-    <p class="section-desc method-intro">데이터 분석과 AI 협업은 도구입니다.<br>도구 위에 <strong>판단의 구조</strong>가 놓여야 결과물이 손에 남습니다.<br>베어풋의 강의·컨설팅 모든 자리에서 이 세 가지가 공통 골격입니다.</p>
-
-    <div class="method-cards method-3">
-      <div class="method-card axis-socdr">
-        <div class="layer-num">FRAME</div>
-        <div class="layer-en">S-O-C-D-R</div>
-        <div class="layer-ko">판단의 다섯 단계</div>
-        <span class="layer-role">책 "판단의 기술"의 골격</span>
-        <p class="layer-desc">상황을 읽고 · 방향을 잡고 · 후보를 고르고 · 결정하고 · 되돌아본다. 다섯 단계 어디에서 결정이 흔들리는지가 보입니다.</p>
-      </div>
-      <div class="method-card axis-harness">
-        <div class="layer-num">HARNESS</div>
-        <div class="layer-en">판단 하네스</div>
-        <div class="layer-ko">결정의 검증 장치</div>
-        <span class="layer-role">블루팀 · 레드팀 · 결정 카드</span>
-        <p class="layer-desc">결정의 근거와 가정을 흔들어 보는 장치. AI가 만든 그럴듯한 초안을 업무에 쓸 수 있는 결과로 검증하는 자리.</p>
-      </div>
-      <div class="method-card axis-quad">
-        <div class="layer-num">QUADRANT</div>
-        <div class="layer-en">4사분면 분류</div>
-        <div class="layer-ko">자동화의 한계선</div>
-        <span class="layer-role">외부 의존성 × 환경 안정성</span>
-        <p class="layer-desc">어디까지 AI 자동화로 풀고, 어디서부터 사람이 결정해야 하는가. 무차별 자동화도 무차별 비자동화도 답이 아닙니다.</p>
-      </div>
+    <div class="area-grid">
+      <a class="area-card" href="courses.html#g-decision"><span class="area-no">01</span><h3>결정·판단</h3><p class="area-out">판단 복기 카드 · 전략 기획서와 실행 계획서</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-plan"><span class="area-no">02</span><h3>기획·보고</h3><p class="area-out">검증 기록이 붙은 기획서 · 원인·효과 분석 보고서</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-buy"><span class="area-no">03</span><h3>구매관리</h3><p class="area-out">구매 판단사전 · 실습용 구매 승인 시스템</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-sales"><span class="area-no">04</span><h3>영업전략</h3><p class="area-out">영업 결정 여섯 개와 한 페이지 제안서</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-customer"><span class="area-no">05</span><h3>고객관리</h3><p class="area-out">고객 상태 기준과 경보 룰 · 3개월 실행 로드맵</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-forecast"><span class="area-no">06</span><h3>수요예측·마케팅 판정</h3><p class="area-out">수요예측 의사결정 1장 · 스톱룰을 넣은 결론문</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card" href="courses.html#g-new"><span class="area-no">07</span><h3>신사업·상품기획</h3><p class="area-out">신사업 기획안 한 장 · 상품기획서 종합본</p><span class="area-go">과정 보기 →</span></a>
+      <a class="area-card area-custom" href="#contact"><span class="area-no">+</span><h3>사내 맞춤 · 컨설팅</h3><p class="area-out">귀사 업무에 맞춰 과정을 줄이거나 묶습니다. 귀사 데이터로 직접 분석도 합니다.</p><span class="area-go">문의하기 →</span></a>
     </div>
 
-    <div class="method-feedback">
-      세 축은 분리된 도구가 아닙니다.<br><strong>S-O-C-D-R로 판단의 단계를 보고, 판단 하네스로 결정을 검증하며, 4사분면으로 자동화의 경계를 그립니다.</strong><br>이 골격 위에 데이터 분석과 AI 협업이 얹힙니다.
-    </div>
+    <h3 class="sub-head ex-head">결과물은 이렇게 생겼습니다</h3>
+    <p class="section-desc ex-desc">구매관리 과정의 예입니다. 모두 강사가 만든 가상 데이터입니다.</p>
 
-    <div class="academic-note">
-      <div class="note-label">방법론의 형태</div>
-      <p>책 "판단의 기술"의 이론, 강의의 실습 워크숍, 컨설팅의 결정 카드 시스템. 모두 같은 방법론의 다른 표면입니다.<br>학습자가 가져가는 것은 도구가 아니라 <strong>판단의 구조</strong>입니다.</p>
+    <div class="ex-grid">
+      <!-- 예시 1: 구매 판단사전 -->
+      <figure class="ex">
+        <div class="ex-frame">
+          <div class="ex-bar"><span>구매 판단사전</span><em>가상 데이터</em></div>
+          <table class="ex-dict">
+            <thead><tr><th>ID</th><th>언제</th><th>기준</th><th>다시 볼 신호</th></tr></thead>
+            <tbody>
+              <tr><td>P-07</td><td>단가 급등</td><td>직전 석 달 평균보다 크게 오르면 사유 확인. 원자재 시세와 같은 방향이면 승인</td><td>원자재 지표를 바꿀 때</td></tr>
+              <tr><td>P-12</td><td>계약 업체 밖 구매</td><td>더 낸 금액을 기록. 긴급 사유가 있으면 승인</td><td>같은 품목 반복</td></tr>
+              <tr><td>P-19</td><td>납기 지연</td><td>분기 지연이 잦은 업체는 물량 일부 이전 검토</td><td>대체 업체 품질 이상</td></tr>
+            </tbody>
+          </table>
+          <div class="ex-meta">v2 · 담당자 승인 · 2027-03</div>
+        </div>
+        <figcaption><b>판단사전</b>교육이 끝나도 다음 구매 결정에 다시 쓰는 내 기준이 남습니다.</figcaption>
+      </figure>
+
+      <!-- 예시 2: 검증 기록이 붙은 보고서 -->
+      <figure class="ex">
+        <div class="ex-frame">
+          <div class="ex-bar"><span>기획서 1장</span><em>가상 데이터</em></div>
+          <div class="ex-report">
+            <div class="rp-main">
+              <div class="rp-row"><span>상황</span>3분기 원가율이 올랐다</div>
+              <div class="rp-row"><span>질문</span>어느 품목이 끌어올렸나</div>
+              <div class="rp-row"><span>결론</span>상위 2개 품목이 대부분. 단가 재협상 우선</div>
+              <div class="rp-row"><span>다시 볼 신호</span>원자재 시세가 반대로 움직일 때</div>
+            </div>
+            <div class="rp-check">
+              <div class="rp-check-h">검증 기록</div>
+              <div class="ck ok">AI 회귀 계수를 엑셀로 다시 계산 · 일치</div>
+              <div class="ck ok">품목별 합계를 원자료와 대조 · 일치</div>
+              <div class="ck mine">데이터에 없는 사정 직접 기입 · 공급처 변경</div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>검증 기록</b>AI 초안을 어떻게 확인했는지가 보고서에 함께 붙습니다.</figcaption>
+      </figure>
+
+      <!-- 예시 3: 실습용 구매 승인 시스템 -->
+      <figure class="ex">
+        <div class="ex-frame">
+          <div class="ex-bar"><span>실습용 구매 승인 시스템</span><em>가상 데이터</em></div>
+          <table class="ex-sys">
+            <thead><tr><th>거래</th><th>처리</th><th>근거</th></tr></thead>
+            <tbody>
+              <tr><td>볼트 M8 · A사</td><td><span class="st auto">자동 승인</span></td><td>계약 단가</td></tr>
+              <tr><td>동판 · B사</td><td><span class="st auto">자동 승인</span></td><td>P-07</td></tr>
+              <tr><td>베어링 · C사</td><td><span class="st hum">담당자 검토</span></td><td>P-12 기준 밖</td></tr>
+              <tr><td>도료 · D사</td><td><span class="st miss">정보 부족</span></td><td>견적서 없음</td></tr>
+            </tbody>
+          </table>
+          <div class="ex-meta">기준 안은 자동 분류 · 기준 밖은 사람에게</div>
+        </div>
+        <figcaption><b>승인 시스템</b>판단사전 기준으로 거래를 나누는 실습용 시스템을 직접 만듭니다.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -771,6 +747,158 @@ body{word-break:keep-all;overflow-wrap:anywhere}
   </div>
 </section>
 
+<!-- METHOD section · 판단의 구조를 가르치는 방법 -->
+<section id="method">
+  <div class="container">
+    <div class="section-label">Method</div>
+    <h2 class="section-title">판단의 구조를 가르치는 방법</h2>
+    <p class="section-desc method-intro">데이터 분석과 AI 협업은 도구입니다.<br>도구 위에 <strong>판단의 구조</strong>가 놓여야 결과물이 손에 남습니다.<br>베어풋의 강의·컨설팅 모든 자리에서 이 세 가지가 공통 골격입니다.</p>
+
+    <div class="method-cards method-3">
+      <div class="method-card axis-socdr">
+        <div class="layer-num">FRAME</div>
+        <div class="layer-en">S-O-C-D-R</div>
+        <div class="layer-ko">판단의 다섯 단계</div>
+        <span class="layer-role">책 "판단의 기술"의 골격</span>
+        <p class="layer-desc">상황을 읽고 · 방향을 잡고 · 후보를 고르고 · 결정하고 · 되돌아본다. 다섯 단계 어디에서 결정이 흔들리는지가 보입니다.</p>
+      </div>
+      <div class="method-card axis-harness">
+        <div class="layer-num">HARNESS</div>
+        <div class="layer-en">판단 하네스</div>
+        <div class="layer-ko">결정의 검증 장치</div>
+        <span class="layer-role">블루팀 · 레드팀 · 결정 카드</span>
+        <p class="layer-desc">결정의 근거와 가정을 흔들어 보는 장치. AI가 만든 그럴듯한 초안을 업무에 쓸 수 있는 결과로 검증하는 자리.</p>
+      </div>
+      <div class="method-card axis-quad">
+        <div class="layer-num">QUADRANT</div>
+        <div class="layer-en">4사분면 분류</div>
+        <div class="layer-ko">자동화의 한계선</div>
+        <span class="layer-role">외부 의존성 × 환경 안정성</span>
+        <p class="layer-desc">어디까지 AI 자동화로 풀고, 어디서부터 사람이 결정해야 하는가. 무차별 자동화도 무차별 비자동화도 답이 아닙니다.</p>
+      </div>
+    </div>
+
+    <div class="method-feedback">
+      세 축은 분리된 도구가 아닙니다.<br><strong>S-O-C-D-R로 판단의 단계를 보고, 판단 하네스로 결정을 검증하며, 4사분면으로 자동화의 경계를 그립니다.</strong><br>이 골격 위에 데이터 분석과 AI 협업이 얹힙니다.
+    </div>
+
+    <div class="academic-note">
+      <div class="note-label">방법론의 형태</div>
+      <p>책 "판단의 기술"의 이론, 강의의 실습 워크숍, 컨설팅의 결정 카드 시스템. 모두 같은 방법론의 다른 표면입니다.<br>학습자가 가져가는 것은 도구가 아니라 <strong>판단의 구조</strong>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (강화: 베어풋 정체성 + 책 시리즈) -->
+<section id="about" class="bg-card-section">
+  <div class="container">
+    <div class="section-label">Instructor</div>
+    <h2 class="section-title">강사 소개</h2>
+    <div style="height:32px"></div>
+
+    <div class="profile-layout">
+      <div class="profile-info">
+        <div class="profile-avatar">백</div>
+        <div class="profile-name">백승훈</div>
+        <div class="profile-title">베어풋 컴퍼니 대표</div>
+        <div class="profile-stats">
+          <div class="stat"><div class="stat-num">34+</div><div class="stat-label">실무·교육 경력(년)</div></div>
+          <div class="stat"><div class="stat-num">163+</div><div class="stat-label">강의 횟수(2010~2025)</div></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Barefoot Company identity (v2.4 — 줄바꿈 + 시 톤) -->
+        <div class="barefoot-block">
+          <h3>베어풋 컴퍼니</h3>
+          <p><strong>AI 시대 의사결정 시스템 설계 회사.</strong></p>
+          <p>완전 자동화도 완전 비자동화도 답이 아닌 영역.<br>환경이 결정에 반응하는 의사결정의 영역.<br>그 자리에 전문성을 둡니다.</p>
+          <p>강의 · 컨설팅 · 출판, 세 라인 모두<br>같은 방법론(S-O-C-D-R · 판단 하네스 · 4사분면)에서 나옵니다.</p>
+          <div class="barefoot-promise"><strong>방법은 베어풋이, 결과는 의사결정자가.</strong><br>분석 근거와 가정을 함께 드립니다.<br>마지막 결정과 그 책임은 결정하는 사람에게 있습니다.</div>
+        </div>
+
+        <div class="detail-block">
+          <h3>경력</h3>
+          <p><strong>제일제당(現 CJ)</strong> · <strong>SK Telecom</strong> · <strong>SK Communications</strong> · <strong>현대캐피탈</strong> · 청담러닝.<br>마케팅 · 전략 · 데이터 분석 실무를 거쳤습니다.</p>
+          <p style="margin-top:10px">현재 베어풋 컴퍼니를 운영하며<br>기업 교육과 컨설팅을 진행합니다.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3>학력</h3>
+          <p><strong>서울대학교</strong> 경영학과 학사<br><strong>KAIST</strong> 대학원 경영과학과 석사 (마케팅 Modeling 전공)</p>
+        </div>
+
+        <div class="detail-block">
+          <h3>저서</h3>
+          <p><strong>판단의 기술</strong> <span style="color:var(--text-muted);font-size:13px">· 2025</span></p>
+          <p style="margin-top:10px">AI 시대,<br>사람이 내려야 할 판단의 구조.<br>S-O-C-D-R 프레임워크의 이론적 기반.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3>교육 철학</h3>
+          <p><strong>"AI는 초안을 만들고, 판단은 사람이 합니다."</strong></p>
+          <p style="margin-top:10px">도구 사용법이 아닌 <strong>판단의 구조</strong>를 가르칩니다.<br>AI가 만든 결과물을 검증하고,<br>조직 맥락을 반영해<br>보고서를 완성하는 과정.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW · WHY section -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="section-label">Why</div>
+    <h2 class="section-title">왜 판단인가</h2>
+    <div class="why-content">
+      <p class="why-lead">단백질 접힘처럼 자연이 정답을 갖고 있는 문제에서는<br>AI가 답을 찾습니다.<br>그러나 비즈니스 의사결정에는<br><em>정답이 어디에도 없습니다</em>.</p>
+      <div class="why-body poem-block">
+        <div class="stanza">
+          <p>우리가 결정하는 순간,<br>채널 · 고객 · 경쟁사가 반응합니다.</p>
+          <p><strong>우리 결정이 환경의 게임 룰을 바꿉니다.</strong></p>
+          <p>그래서 한 번 푼 최적화도<br>환경이 바뀌면 다시 풀어야 합니다.</p>
+        </div>
+        <div class="stanza">
+          <p>AI 시대에 달라진 것은<br><strong>생산이 자동화</strong>되었다는 점.</p>
+          <p>그래서 <strong>판단의 자리</strong>가 더 중요해졌습니다.</p>
+          <p>자동화된 결과물이 <span class="muted">그럴듯한 평범함</span>으로 채워질 때,<br><strong>쓸 만한 것을 골라내는 판단</strong>이 조직의 진짜 자산이 됩니다.</p>
+        </div>
+        <div class="stanza">
+          <p>베어풋 컴퍼니가 전문으로 하는 영역은<br><strong>완전 자동화도 완전 비자동화도 답이 아닌 영역</strong>.</p>
+          <p>환경이 결정에 반응하는 의사결정의 영역.</p>
+          <p>강의 · 컨설팅 · 출판, 모든 자리에 같은 약속이 박혀 있습니다.</p>
+        </div>
+      </div>
+      <div class="why-promise">
+        <blockquote>의지와 집중을 들고 오면, 결과를 만드는 방법이 손에 남는다.</blockquote>
+        <div class="promise-meta">베어풋 컴퍼니의 모든 제공물에 들어가는 첫 줄</div>
+      </div>
+      <div class="lineage-block">
+        <div class="note-label">학술 lineage · 같은 본질, 네 개의 영역</div>
+        <div class="scholar">
+          <div class="who">George Soros · 시장</div>
+          <p class="what"><em>시장에 참여하는 자가 시장을 만든다.</em><br>참여자의 인식이 가격을 만들고, 가격이 다시 인식을 만든다. <span class="muted">Reflexivity.</span></p>
+        </div>
+        <div class="scholar">
+          <div class="who">Donald MacKenzie · 금융 모델</div>
+          <p class="what"><em>모델은 시장을 비추는 카메라가 아니라, 시장을 만드는 엔진이다.</em><br>"An Engine, Not a Camera"(2006). Black-Scholes 옵션 공식이 시장을 그 공식대로 움직이게 만든 사례. <span class="muted">Performativity.</span></p>
+        </div>
+        <div class="scholar">
+          <div class="who">Robert Lucas · 경제 정책</div>
+          <p class="what"><em>정책이 바뀌면 사람의 기대가 바뀌고, 과거의 모델은 더 이상 맞지 않는다.</em><br>1976년 논문 "Econometric Policy Evaluation: A Critique". 1995년 노벨 경제학상. <span class="muted">Lucas Critique.</span></p>
+        </div>
+        <div class="scholar">
+          <div class="who">Charles Goodhart · 통계 지표</div>
+          <p class="what"><em>측정 기준이 목표가 되는 순간, 그 기준은 깨진다.</em><br>1975년 영국 통화정책 분석. 정책 도구가 된 지표가 더 이상 의미 있는 측정값이 아니게 되는 메커니즘. <span class="muted">Goodhart's Law.</span></p>
+        </div>
+        <div class="closing">
+          <p>베어풋의 관점에 영향을 준 네 영역의 논의.<br><strong>우리가 결정하는 순간 환경이 반응한다.</strong></p>
+          <p style="margin-top:10px">정답은 한 번 찾는 것이 아니라 매번 다시 찾는 것.<br>그래서 베어풋이 만드는 것은<br><strong>정답을 한 번에 찾아주는 시스템이 아니라,<br>환경의 반응을 따라가는 시스템</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOTES · 판단 노트 (원문은 네이버 블로그, 여기는 링크만) -->
 <section id="notes">
   <div class="container">
@@ -801,54 +929,6 @@ body{word-break:keep-all;overflow-wrap:anywhere}
   </div>
 </section>
 
-<!-- SERVICES · 강의·컨설팅 문의 -->
-<section id="services" class="bg-card-section">
-  <div class="container">
-    <div class="section-label">Services</div>
-    <h2 class="section-title">강의 · 컨설팅으로 할 수 있는 일</h2>
-      <!-- [1] Capability — 강의 분야 3축 -->
-      <div class="capability-block">
-        <div class="block-label">강의 분야</div>
-        <div class="capability-grid">
-          <div class="capability-card cap-data">
-            <h3>데이터 분석</h3>
-            <p><strong>시계열·RFM·세그먼트·회귀·텍스트마이닝</strong>으로 데이터에서 의사결정 근거를 추출합니다.</p>
-          </div>
-          <div class="capability-card cap-ai">
-            <h3>AI 협업</h3>
-            <p><strong>Excel + ChatGPT/Claude·Power BI</strong> 워크플로우로 AI가 초안을 만들고 사람이 검증·확정합니다.</p>
-          </div>
-          <div class="capability-card cap-harness">
-            <h3>판단 하네스</h3>
-            <p><strong>S-O-C-D-R · 블루팀/레드팀 · 4사분면</strong>으로 의사결정 품질과 신뢰도를 끌어올립니다.</p>
-          </div>
-        </div>
-
-        <!-- Output bridge -->
-        <div class="output-bridge">
-          <div class="arrow">↓↓↓</div>
-          <div class="line">이 세 가지를 결합해 <span class="accent">전략 · 운영 · 기획</span> 산출물을 만듭니다</div>
-          <p class="sub">데이터 분석으로 끝나는 강의가 아닙니다. 의사결정에 바로 쓸 결과물까지 완성하는 강의입니다.</p>
-        </div>
-      </div>
-      <!-- [2] Domains -->
-      <div class="domain-block">
-        <div class="block-label">적용 도메인</div>
-        <div class="domain-chips">
-          <span class="domain-chip">전략·기획</span>
-          <span class="domain-chip">수요예측</span>
-          <span class="domain-chip">고객관리·CRM</span>
-          <span class="domain-chip">구매·MD</span>
-          <span class="domain-chip">영업전략</span>
-          <span class="domain-chip">마케팅·신상품</span>
-          <span class="domain-chip">신사업 발굴</span>
-          <span class="domain-chip">B2B</span>
-          <span class="domain-chip">판단·의사결정</span>
-          <span class="domain-chip">자격과정</span>
-        </div>
-      </div>
-  </div>
-</section>
 <!-- PROCESS · 교육/컨설팅 탭 분리 -->
 <section class="bg-card-section">
   <div class="container">
