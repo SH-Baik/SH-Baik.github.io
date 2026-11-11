@@ -21,7 +21,7 @@
 <style>
 :root{--bg:#FFFFFF;--bg-card:#FFFFFF;--teal:#3B2C0D;--teal-dark:#3B2C0D;--teal-light:#EFE8DC;--green:#5A4626;--green-light:#EFE8DC;--amber:#9C5B22;--amber-light:#FAF7F2;--blue:#8A7655;--blue-light:#EFE8DC;--plum:#7A6647;--plum-light:#FAF7F2;--text:#3B2C0D;--text-sec:#7A6647;--text-muted:#7A6647;--border:#E3DACB;--border-light:#E3DACB;--shadow:none;--warm:#FAF7F2;--accent:#9C5B22;--accent-on-brand:#E0A25E;--f-head:'Barlow','Pretendard',system-ui,sans-serif;--f-body:'Pretendard','Barlow',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--f-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light)}nav.scrolled{box-shadow:var(--shadow)}.nav-inner{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}.nav-logo{font-family:var(--f-head);font-weight:400;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:-.5px}.nav-logo span{color:var(--teal)}.nav-links{display:flex;gap:24px;align-items:center}.nav-link{font-size:14px;color:var(--text-sec);text-decoration:none;transition:color .2s}.nav-link:hover{color:var(--teal)}.nav-cta{background:var(--teal);color:#fff;text-decoration:none;padding:8px 20px;border-radius:6px;font-size:14px;font-weight:500;transition:background .2s}.nav-cta:hover{background:var(--teal-dark)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light)}nav.scrolled{box-shadow:var(--shadow)}.nav-inner{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}.nav-logo{font-family:var(--f-head);font-weight:400;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:-.5px}.nav-logo{display:flex;align-items:center;gap:14px}.nav-logo-mark{display:block;height:13px;width:auto}.nav-logo-sep{display:block;width:1px;height:18px;background:var(--border)}.nav-logo-name{font-size:15px;color:var(--text);letter-spacing:-.2px}@media(max-width:560px){.nav-logo{gap:10px}.nav-logo-mark{height:11px}.nav-logo-name{font-size:13px}}@media(max-width:340px){.nav-logo-sep,.nav-logo-name{display:none}.nav-logo-mark{height:12px}}.nav-links{display:flex;gap:24px;align-items:center}.nav-link{font-size:14px;color:var(--text-sec);text-decoration:none;transition:color .2s}.nav-link:hover{color:var(--teal)}.nav-cta{background:var(--teal);color:#fff;text-decoration:none;padding:8px 20px;border-radius:6px;font-size:14px;font-weight:500;transition:background .2s}.nav-cta:hover{background:var(--teal-dark)}
 .container{max-width:1080px;margin:0 auto;padding:0 24px}section{padding:80px 0}.section-label{font-size:13px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}.section-title{font-family:var(--f-head);font-size:clamp(24px,3.5vw,32px);font-weight:400;line-height:1.4;letter-spacing:-.5px;margin-bottom:16px}.section-desc{font-size:15px;color:var(--text-sec);max-width:600px;line-height:1.7;margin-bottom:48px}
 
 /* === HERO with 2-tier subhead === */
@@ -378,8 +378,8 @@ nav{background:rgba(255,255,255,.97)}
 </head>
 <body>
 
-<nav id="nav"><div class="nav-inner"><a href="#" class="nav-logo">백승훈 <span>·</span> 교육 & 컨설팅</a><div class="nav-links"><a href="#about" class="nav-link">강사 소개</a><a href="#references" class="nav-link">레퍼런스</a><a href="#notes" class="nav-link">판단 노트</a></div><a href="#contact" class="nav-cta">강의·컨설팅 문의</a></div>
-<div class="nav-mobile"><a href="#about">강사 소개</a><a href="#references">레퍼런스</a><a href="#notes">판단 노트</a><a href="#contact">강의·컨설팅 문의</a></div></nav>
+<nav id="nav"><div class="nav-inner"><a href="#" class="nav-logo" aria-label="Barefoot · 백승훈 교육 & 컨설팅"><img class="nav-logo-mark" src="assets/barefoot-logo-horizontal-brown.svg" alt="BAREFOOT"><span class="nav-logo-sep" aria-hidden="true"></span><span class="nav-logo-name">백승훈 · 교육 & 컨설팅</span></a><div class="nav-links"><a href="#about" class="nav-link">강사 소개</a><a href="courses.html" class="nav-link">교육 과정</a><a href="#references" class="nav-link">레퍼런스</a><a href="#notes" class="nav-link">판단 노트</a></div><a href="#contact" class="nav-cta">강의·컨설팅 문의</a></div>
+<div class="nav-mobile"><a href="#about">강사 소개</a><a href="courses.html">교육 과정</a><a href="#references">레퍼런스</a><a href="#notes">판단 노트</a><a href="#contact">강의·컨설팅 문의</a></div></nav>
 
 <!-- HERO with 2-tier subhead -->
 <section class="hero">
@@ -640,7 +640,7 @@ nav{background:rgba(255,255,255,.97)}
               <a class="course-link" href="https://www.ksaedu.or.kr/front/btoc/crs/off/crssesDetail.html?crscd=COL0105480&crsClsfid=1887065" target="_blank" rel="noopener">B2B 마케팅 전략<span class="ext">↗</span></a>
             </li>
             <li>
-              <a class="course-link" href="https://eminent-editor-882.notion.site/AI-343d371e2096805a9a86dab48c8f349f" target="_blank" rel="noopener">기획에 활용하는 데이터 분석 실무<span class="ext">↗</span></a>
+              <a class="course-link" href="courses.html#g-plan">기획에 활용하는 데이터 분석 실무<span class="ext">→</span></a>
             </li>
           </ul>
         </div>
@@ -693,7 +693,7 @@ nav{background:rgba(255,255,255,.97)}
         <!-- Footer with Notion link -->
         <div class="schedule-footer">
           <p class="note"><strong>맞춤 과정 설계</strong>도 가능합니다. 주제·도메인·인원에 맞춰 1일(6h) / 2일(14h) / 3일(20h)로 설계합니다.</p>
-          <a href="https://eminent-editor-882.notion.site/AI-343d371e2096805a9a86dab48c8f349f" target="_blank" rel="noopener">전체 강의·후기 보기 (Notion) ↗</a>
+          <a href="courses.html">2027 교육 과정 전체 보기 →</a>
         </div>
       </div>
       <h3 class="sub-head">교육을 진행한 곳</h3>
@@ -733,7 +733,7 @@ nav{background:rgba(255,255,255,.97)}
       <div class="voc-card"><blockquote>새롭게 배운 내용을 업무에 적용할 방법을 고민하는 시간 자체가 설렘이었다.</blockquote><div class="voc-meta">정○아 · 논리적 기획을 위한 데이터 활용 · KPC 2026.03</div></div>
       <div class="voc-card"><blockquote>수업 내내 판단을 해야 해서 머리가 띵하다. 그런데 표정은 재밌다는 얼굴이었습니다. 편하게 듣는 강의가 아니라 머리를 쓰는 강의.</blockquote><div class="voc-meta">수강생 · AI시대, 판단의 기술×무기가 되는 생각법 · 한국환경공단 2026.04</div></div>
     </div>
-    <a href="https://eminent-editor-882.notion.site/AI-343d371e2096805a9a86dab48c8f349f#voc" class="notion-link" target="_blank" rel="noopener">수강 후기 더보기 →</a>
+    <a href="courses.html" class="notion-link">과정별 내용 보기 →</a>
   </div>
 </section>
 
