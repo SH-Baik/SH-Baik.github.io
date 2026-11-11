@@ -376,7 +376,7 @@ strong,b{font-weight:500}
 nav{background:rgba(255,255,255,.97)}
 
 .loop-field{position:relative;height:380px;border-left:1px solid #6B5A3D;border-bottom:1px solid #6B5A3D}.loop-field canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.dot-caption{transition:opacity .18s}@media(max-width:768px){.loop-field{height:300px}}
-.loop-lede{font-family:var(--f-head);font-weight:300;font-size:17px;line-height:1.5;color:#fff;margin:0 0 14px;letter-spacing:-.2px}.dot-caption{font-size:13.5px!important;color:#fff!important}.dot-btn{white-space:nowrap;flex:none}@media(max-width:768px){.loop-field{height:320px}.loop-lede{font-size:15px}.dot-caption{font-size:12.5px!important;line-height:1.45}}
+.loop-lede{font-family:var(--f-head);font-weight:300;font-size:19px;line-height:1.5;color:#fff;margin:0 0 16px;letter-spacing:-.3px}.loop-field{height:400px}.hero .dot-field-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:16px;margin-top:16px}.dot-caption{font-size:14.5px!important;line-height:1.5;color:#fff!important;min-height:3em;display:block;font-weight:400}.dot-btn{white-space:nowrap;flex:none}@media(max-width:768px){.loop-field{height:340px}.loop-lede{font-size:16px;margin-bottom:12px}.hero .dot-field-foot{grid-template-columns:1fr;gap:10px}.dot-caption{font-size:14px!important;min-height:3em}.dot-btn{justify-self:start}}
 /* === 2026-11-11 피드백 반영 === */
 body{word-break:keep-all;overflow-wrap:anywhere}
 @media(max-width:768px){.nav-mobile{display:grid!important;grid-template-columns:repeat(5,1fr);gap:4px;overflow:visible}.nav-mobile a{text-align:center;padding:6px 2px!important;font-size:12px!important;white-space:nowrap}}
@@ -932,15 +932,15 @@ function switchProcess(which,ev){
 /* v4 · 동적 요소 */
 (function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // 1) 히어로: 판단 순환 v2 — 확인한 판단을 규칙으로 남기고, 다음 처리에 다시 쓴다. 규칙도 고친다.
+  // 1) 히어로: 판단 순환 v3 — 확인한 판단을 규칙으로 남기고, 다음 처리에 다시 쓴다. 규칙도 고친다.
   var cv=document.getElementById('loopCanvas'),btn=document.getElementById('dotBtn'),cap=document.getElementById('dotCaption');
   if(cv&&cv.getContext){
     var ctx=cv.getContext('2d'),W=0,H=0;
     var C={ink:'#FFFFFF',acc:'#E0A25E',mut:'#C9BBA0',faint:'rgba(201,187,160,.32)',bg:'#3B2C0D'};
-    var K=4,PERR=[.62,.52,.44,.36],WEIGHT=[.28,.26,.24,.22],NEED=3,STRIP=30,REV=2;
+    var K=4,PERR=[.92,.8,.75,.7],WEIGHT=[.34,.23,.22,.21],NEED=2,STRIP=26,REV=2;
     var CAPS=['① AI가 업무를 처리합니다','② 사람이 결과와 예외를 확인합니다','③ 확인한 판단을 규칙으로 남깁니다','④ 승인한 규칙을 다음 처리에 적용합니다','⑤ 환경이 바뀌면 규칙도 고칩니다','규칙은 쌓이고, 새로운 예외는 사람이 판단합니다'];
     // 단계별로 밝게 둘 구역
-    var FOCUS=[{flow:1},{human:1,flow:1},{dict:1},{gate:1,flow:1,strip:1},{dict:1,human:1,gate:1},{flow:1,human:1,dict:1,gate:1,strip:1}];
+    var FOCUS=[{flow:1},{human:1,flow:1},{dict:1},{gate:1,flow:1,strip:1},{dict:1,human:1,gate:1,strip:1},{flow:1,human:1,dict:1,gate:1,strip:1}];
     var S,seed;
     function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
     function newSlot(){return{n:0,pts:[],rule:false,rt:0,docked:false,pulse:0,ver:1,stale:false,rev:0,revT:-1}}
@@ -959,7 +959,7 @@ function switchProcess(which,ev){
       var r=cv.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);
       W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);
     }
-    function PY(){return H*.58}
+    function PY(){return H*.55}
     function AIX(){return W*.15}
     function HUMX(){return W*.88}
     function COLX(k){return W*(.34+k*.135)}
@@ -973,57 +973,57 @@ function switchProcess(which,ev){
     }
 
     function step(dt){
-      var spd=W/3.4,rv=S.slots[REV];
+      var spd=W/2.3,rv=S.slots[REV];
       S.spawn-=dt;
-      if(S.spawn<=0){S.items.push({k:pickKind(),x:-8,state:0,wrong:false,exc:false,flash:0,gate:0});S.spawn=.36}
+      if(S.spawn<=0){S.items.push({k:pickKind(),x:-8,state:0,wrong:false,exc:false,flash:0,gate:0});S.spawn=.24}
       S.items.forEach(function(it){
         it.x+=spd*dt;if(it.flash>0)it.flash-=dt*2.2;if(it.gate>0)it.gate-=dt*2.5;
         if(it.state===0&&it.x>=AIX()){
           it.state=1;
           var sl=S.slots[it.k];
           it.wrong=!sl.docked&&rnd()<PERR[it.k];
-          if(sl.stale)it.exc=rnd()<.55;               // 환경이 바뀌어 기존 규칙이 안 맞는 경우
+          if(sl.stale)it.exc=true;               // 환경이 바뀌어 기존 규칙이 안 맞는 경우
           else it.exc=!it.wrong&&allDocked()&&S.phase>=5&&rnd()<.08;
         }
         if(it.state===1&&S.slots[it.k].docked&&it.x>=COLX(it.k)){it.state=2;it.gate=1;S.slots[it.k].pulse=Math.max(S.slots[it.k].pulse,.6)}
         if(it.state<3&&it.x>=HUMX()){
-          it.state=3;it.flash=1;
+          var viaRule=it.state===2;it.state=3;it.flash=1;
           var sl2=S.slots[it.k];
-          if(it.wrong){fragTo(it.k,it.x);S.results.push({v:'w',t:0});setPhase(1)}
+          if(it.wrong){fragTo(it.k,it.x);S.results.push({v:'h',t:0});setPhase(1)}
           else if(it.exc){
-            S.results.push({v:'e',t:0});
-            if(sl2.stale&&sl2.rev<2){sl2.rev++;fragTo(it.k,it.x)}
-          }else S.results.push({v:'ok',t:0});
+            S.results.push({v:'h',t:0});
+            if(sl2.stale&&sl2.rev<1){sl2.rev++;fragTo(it.k,it.x)}
+          }else S.results.push({v:viaRule?'a':'h',t:0});
           if(S.results.length>STRIP)S.results.shift();
         }
       });
       S.items=S.items.filter(function(it){return it.x<W+12});
       S.results.forEach(function(r){r.t=Math.min(1,r.t+dt*3)});
-      S.frags.forEach(function(f){f.t+=dt/.95});
+      S.frags.forEach(function(f){f.t+=dt/.7});
       S.frags=S.frags.filter(function(f){
         if(f.t<1)return true;
         var sl=S.slots[f.k];
-        if(sl.stale){if(sl.rev>=2&&sl.revT<0)sl.revT=0;return false}
+        if(sl.stale){if(sl.rev>=1&&sl.revT<0)sl.revT=0;return false}
         sl.n++;sl.pts.push({ox:f.ox,oy:f.oy,rot:f.rot});
         if(sl.n>=NEED&&!sl.rule){sl.rule=true;sl.rt=0;setPhase(2)}
         return false;
       });
       S.slots.forEach(function(sl){
         if(sl.pulse>0)sl.pulse-=dt*1.6;
-        if(sl.rule&&!sl.docked&&!sl.stale){sl.rt+=dt;if(sl.rt>=2.6){sl.docked=true;sl.pulse=1;setPhase(3)}}
+        if(sl.rule&&!sl.docked&&!sl.stale){sl.rt+=dt;if(sl.rt>=2.1){sl.docked=true;sl.pulse=1;setPhase(3)}}
         if(sl.revT>=0){
           sl.revT+=dt;
-          if(sl.revT>=2.4){sl.stale=false;sl.ver++;sl.revT=-1;sl.pulse=1;S.done=0;setPhase(5)}
+          if(sl.revT>=1.7){sl.stale=false;sl.ver++;sl.revT=-1;sl.pulse=1;S.done=0;setPhase(5)}
         }
       });
       if(allDocked()&&S.phase<4){
         if(S.allT<0)S.allT=0;S.allT+=dt;
-        if(S.allT>3.2){rv.stale=true;setPhase(4)}
+        if(S.allT>.9){rv.stale=true;setPhase(4)}
       }
-      if(S.phase>=5){S.done+=dt;if(S.done>12)reset()}
+      if(S.phase>=5){S.done+=dt;if(S.done>4.2)reset()}
       // 구역 밝기
       var f=FOCUS[Math.max(0,S.phase)];
-      ['flow','human','dict','gate','strip'].forEach(function(z){var tgt=f[z]?1:.32;S.em[z]+=(tgt-S.em[z])*Math.min(1,dt*4)});
+      ['flow','human','dict','gate','strip'].forEach(function(z){var tgt=f[z]?1:.42;S.em[z]+=(tgt-S.em[z])*Math.min(1,dt*4)});
     }
 
     function glyph(k,x,y,r,fill,color,lw){
@@ -1040,8 +1040,9 @@ function switchProcess(which,ev){
       ctx.fillStyle=C.acc;ctx.fill();ctx.restore();
     }
     function label(t,x,y,align,color,size,weight){
+      var ga=ctx.globalAlpha;if(ga<.75&&ga>0)ctx.globalAlpha=.75;
       ctx.font=(weight||400)+' '+(size||12)+'px Pretendard,Barlow,system-ui,sans-serif';ctx.textAlign=align||'left';ctx.textBaseline='middle';
-      ctx.fillStyle=color||C.mut;ctx.fillText(t,x,y);
+      ctx.fillStyle=color||C.mut;ctx.fillText(t,x,y);ctx.globalAlpha=ga;
     }
     function ease(t){return t<0?0:t>1?1:1-Math.pow(1-t,3)}
     function zone(z){ctx.globalAlpha=S.em[z]}
@@ -1053,25 +1054,27 @@ function switchProcess(which,ev){
       zone('dict');
       label('판단사전',W*.02,sy,'left',C.mut,13);
       var r0=S.slots[0];
-      if(r0.rule&&ease((r0.rt-.9)/.4)>0){
-        ctx.globalAlpha=S.em.dict*ease((r0.rt-.9)/.4);
-        label(small?'예: 단가 급등 → 사유 확인':'예: 단가 급등 → 사유 확인 → 예외 승인 기준',COLX(0)-ts/2,sy-ts/2-30,'left',C.acc,small?11:12,500);
-        ctx.strokeStyle=C.acc;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(COLX(0),sy-ts/2-21);ctx.lineTo(COLX(0),sy-ts/2-4);ctx.stroke();
+      if(r0.rule&&ease((r0.rt-.2)/.4)>0){
+        ctx.globalAlpha=ease((r0.rt-.2)/.4);
+        var ex=W*.02,ey=H*.075;
+        label('예',ex,ey,'left',C.mut,small?11:12,400);
+        label('단가 급등 → 사유 확인 → 예외 승인 기준으로 기록',ex+(small?16:18),ey,'left',C.acc,small?12:13,500);
+        ctx.strokeStyle=C.acc;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(COLX(0),ey+10);ctx.lineTo(COLX(0),sy-ts/2-4);ctx.stroke();
         zone('dict');
       }
       S.slots.forEach(function(sl,k){
         var x=COLX(k);
         ctx.setLineDash([3,3]);ctx.strokeStyle=C.faint;ctx.lineWidth=1;ctx.strokeRect(x-ts/2,sy-ts/2,ts,ts);ctx.setLineDash([]);
-        var conv=sl.rule?ease(sl.rt/.6):0;
+        var conv=sl.rule?ease(sl.rt/.45):0;
         sl.pts.forEach(function(p){if(conv<1)shard(x+p.ox*(1-conv),sy+p.oy*(1-conv),p.rot*(1-conv),4.4,1-conv*.9)});
         if(sl.rule){
-          var appr=sl.rt>.5&&sl.rt<1.5&&!sl.docked;   // 사람이 승인하는 순간
-          if(appr){var aa=Math.min(1,(sl.rt-.5)/.25,(1.5-sl.rt)/.25);ctx.save();ctx.globalAlpha=S.em.dict*aa;
+          var appr=sl.rt>.35&&sl.rt<1.2&&!sl.docked;   // 사람이 승인하는 순간
+          if(appr){var aa=Math.min(1,(sl.rt-.35)/.2,(1.2-sl.rt)/.2);ctx.save();ctx.globalAlpha=S.em.dict*aa;
             ctx.fillStyle=C.ink;ctx.fillRect(x+ts/2-2,sy-ts/2-16,36,16);label('승인 ✓',x+ts/2+16,sy-ts/2-8,'center',C.bg,10,600);ctx.restore()}
-          var a=ease((sl.rt-.55)/.4),fly=ease((sl.rt-1.6)/.9),ty=sy+(py-sy)*fly;
+          var a=ease((sl.rt-.4)/.35),fly=ease((sl.rt-1.25)/.75),ty=sy+(py-sy)*fly;
           if(!sl.docked&&a>0){ctx.save();ctx.globalAlpha=S.em.dict*a;ctx.fillStyle=C.acc;ctx.fillRect(x-ts/2,ty-ts/2,ts,ts);glyph(k,x,ty,ts*.2,true,C.bg);ctx.restore()}
           if(sl.docked||fly>0){
-            var flip=sl.revT>=0?Math.abs(Math.cos(Math.min(1,sl.revT/1.2)*Math.PI)):1;
+            var flip=sl.revT>=0?Math.abs(Math.cos(Math.min(1,sl.revT/1.1)*Math.PI)):1;
             ctx.save();ctx.translate(x,sy);ctx.scale(flip,1);
             if(sl.stale&&sl.revT<0){ctx.setLineDash([3,2])}
             ctx.strokeStyle=C.acc;ctx.lineWidth=1.3;ctx.strokeRect(-ts/2,-ts/2,ts,ts);ctx.setLineDash([]);glyph(k,0,0,ts*.2,true,C.acc);ctx.restore();
@@ -1125,16 +1128,18 @@ function switchProcess(which,ev){
         for(var q=3;q>=1;q--){var p=at(ease(Math.max(0,f.t-q*.05)));shard(p[0],p[1],f.rot+t*3,4.8-q*.8,.22*(4-q)/3)}
         var p0=at(t);shard(p0[0],p0[1],f.rot+t*3,4.8,1);
       });
-      // ── 결과 줄 (단순화: 흰 칸 = 그대로 씀, 주황 = 사람이 다시 본 것)
+      // ── 결과: 기준 안은 자동 처리, 기준 밖은 사람 검토 (같은 세로칸 = 같은 순서)
       zone('strip');
-      var stY=STRIPY(),m=Math.max(6,Math.min(9,W*.019)),gap=m*.5,right=W*.96;
-      label('결과',W*.02,stY,'left',C.mut,13);
+      var m=Math.max(6,Math.min(9,W*.019)),gap=m*.5,right=W*.96,rA=H*.79,rH=H*.88,lw=small?64:74;
+      label('자동 처리',W*.02,rA,'left',C.ink,small?11:12,500);
+      label('사람 검토',W*.02,rH,'left',C.acc,small?11:12,500);
       for(var i=S.results.length-1,j=0;i>=0;i--,j++){
-        var r=S.results[i],x=right-j*(m+gap)-m,y=stY-m/2-(1-ease(r.t))*10;
-        if(x<W*.14)break;
+        var r=S.results[i],x=right-j*(m+gap)-m;
+        if(x<W*.02+lw)break;
+        var y=(r.v==='a'?rA:rH)-m/2-(1-ease(r.t))*8;
         ctx.save();ctx.globalAlpha=S.em.strip*ease(r.t);
-        if(r.v==='ok'){ctx.fillStyle=C.ink;ctx.fillRect(x,y,m,m)}
-        else{ctx.strokeStyle=r.v==='w'?C.acc:C.mut;ctx.lineWidth=1.4;ctx.strokeRect(x+.7,y+.7,m-1.4,m-1.4)}
+        if(r.v==='a'){ctx.fillStyle=C.ink;ctx.fillRect(x,y,m,m)}
+        else{ctx.strokeStyle=C.acc;ctx.lineWidth=1.4;ctx.strokeRect(x+.7,y+.7,m-1.4,m-1.4)}
         ctx.restore();
       }
       ctx.globalAlpha=1;
