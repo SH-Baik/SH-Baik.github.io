@@ -950,6 +950,7 @@ function switchProcess(which,ev){
          slots:[0,1,2,3].map(newSlot)};
       setPhase(0);
     }
+    function setCap(p){cap.style.opacity=0;setTimeout(function(){cap.textContent=CAPS[p];cap.style.opacity=1},180)}
     function setPhase(p){
       if(p<=S.phase)return;S.phase=p;
       cap.style.opacity=0;
@@ -1013,14 +1014,17 @@ function switchProcess(which,ev){
         if(sl.rule&&!sl.docked&&!sl.stale){sl.rt+=dt;if(sl.rt>=2.1){sl.docked=true;sl.pulse=1;setPhase(3)}}
         if(sl.revT>=0){
           sl.revT+=dt;
-          if(sl.revT>=1.7){sl.stale=false;sl.ver++;sl.revT=-1;sl.pulse=1;S.done=0;setPhase(5)}
+          if(sl.revT>=1.7){sl.stale=false;sl.ver++;sl.revT=-1;sl.pulse=1;S.done=0;if(S.phase>=5)setCap(5);else setPhase(5)}
         }
       });
       if(allDocked()&&S.phase<4){
         if(S.allT<0)S.allT=0;S.allT+=dt;
         if(S.allT>.9){rv.stale=true;setPhase(4)}
       }
-      if(S.phase>=5){S.done+=dt;if(S.done>3.2)S.finished=true}
+      if(S.phase>=5){S.done+=dt;
+        var busy=S.slots.some(function(x){return x.stale||x.revT>=0});
+        if(!busy&&S.done>7){S.nextRev=((S.nextRev==null?REV:S.nextRev)+1)%K;var q=S.slots[S.nextRev];q.stale=true;q.rev=0;S.done=0;setCap(4)}
+      }
       // 구역 밝기
       var f=FOCUS[Math.max(0,S.phase)];
       ['flow','human','dict','gate','strip'].forEach(function(z){var tgt=f[z]?1:.42;S.em[z]+=(tgt-S.em[z])*Math.min(1,dt*4)});
@@ -1150,10 +1154,9 @@ function switchProcess(which,ev){
       if(!running)return;
       var dt=Math.min(.05,(ts-last)/1000||0);last=ts;
       step(dt);draw();
-      if(S.finished){running=false;return}
       requestAnimationFrame(frame);
     }
-    function play(){if(running||reduce||S.finished)return;running=true;last=performance.now();requestAnimationFrame(frame)}
+    function play(){if(running||reduce)return;running=true;last=performance.now();requestAnimationFrame(frame)}
     function stop(){running=false}
     function finalStill(){reset();var g=0;while(S.phase<5&&g<2400){step(1/30);g++}for(var q=0;q<90;q++)step(1/30);S.em={flow:1,human:1,dict:1,gate:1,strip:1};S.phase=-1;setPhase(5);draw()}
     size();reset();
