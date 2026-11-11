@@ -1020,7 +1020,7 @@ function switchProcess(which,ev){
         if(S.allT<0)S.allT=0;S.allT+=dt;
         if(S.allT>.9){rv.stale=true;setPhase(4)}
       }
-      if(S.phase>=5){S.done+=dt;if(S.done>4.2)reset()}
+      if(S.phase>=5){S.done+=dt;if(S.done>3.2)S.finished=true}
       // 구역 밝기
       var f=FOCUS[Math.max(0,S.phase)];
       ['flow','human','dict','gate','strip'].forEach(function(z){var tgt=f[z]?1:.42;S.em[z]+=(tgt-S.em[z])*Math.min(1,dt*4)});
@@ -1057,8 +1057,8 @@ function switchProcess(which,ev){
       if(r0.rule&&ease((r0.rt-.2)/.4)>0){
         ctx.globalAlpha=ease((r0.rt-.2)/.4);
         var ex=W*.02,ey=H*.075;
-        label('예',ex,ey,'left',C.mut,small?11:12,400);
-        label('단가 급등 → 사유 확인 → 예외 승인 기준으로 기록',ex+(small?16:18),ey,'left',C.acc,small?12:13,500);
+        label('예',ex,ey,'left',C.mut,small?12:12,400);
+        label(small?'단가 급등 → 확인 → 승인 기준':'단가 급등 → 사유 확인 → 예외 승인 기준으로 기록',ex+(small?18:18),ey,'left',C.acc,13,500);
         ctx.strokeStyle=C.acc;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(COLX(0),ey+10);ctx.lineTo(COLX(0),sy-ts/2-4);ctx.stroke();
         zone('dict');
       }
@@ -1080,9 +1080,9 @@ function switchProcess(which,ev){
             ctx.strokeStyle=C.acc;ctx.lineWidth=1.3;ctx.strokeRect(-ts/2,-ts/2,ts,ts);ctx.setLineDash([]);glyph(k,0,0,ts*.2,true,C.acc);ctx.restore();
           }
           if(a>0){
-            var nm='규칙 '+(k+1)+(sl.ver>1?' v'+sl.ver:'');
-            if(sl.revT>=0)nm='고치는 중';else if(sl.stale)nm='다시 봐야 함';
-            label(nm,x,sy+ts/2+13,'center',C.acc,small?10:11,500);
+            var nm=small?(sl.ver>1?'v'+sl.ver:'규칙 '+(k+1)):'규칙 '+(k+1)+(sl.ver>1?' v'+sl.ver:'');
+            if(sl.revT>=0)nm='수정 중';else if(sl.stale)nm='재검토';
+            label(nm,x,sy+ts/2+14,'center',C.acc,small?12:12,500);
           }
         }
       });
@@ -1149,9 +1149,11 @@ function switchProcess(which,ev){
     function frame(ts){
       if(!running)return;
       var dt=Math.min(.05,(ts-last)/1000||0);last=ts;
-      step(dt);draw();requestAnimationFrame(frame);
+      step(dt);draw();
+      if(S.finished){running=false;return}
+      requestAnimationFrame(frame);
     }
-    function play(){if(running||reduce)return;running=true;last=performance.now();requestAnimationFrame(frame)}
+    function play(){if(running||reduce||S.finished)return;running=true;last=performance.now();requestAnimationFrame(frame)}
     function stop(){running=false}
     function finalStill(){reset();var g=0;while(S.phase<5&&g<2400){step(1/30);g++}for(var q=0;q<90;q++)step(1/30);S.em={flow:1,human:1,dict:1,gate:1,strip:1};S.phase=-1;setPhase(5);draw()}
     size();reset();
